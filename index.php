@@ -1,6 +1,7 @@
 <h1>MD5 Cracker</h1>
 <p>This application takes an MD5 hash of four digit pin and check all 10,000 possible four digit PINs to determine the PIN.</p>
 <pre>
+    Debug Output:
     <?php 
         $goodtext = "Not found";
 
@@ -8,7 +9,7 @@
             $time_pre = microtime(true);
             $md5 = $_GET['md5'];
 
-            $num = "1234";
+            $num = "01234";
             $show = 15;
 
             for($i=0; $i<strlen($num); $i++ ) {
