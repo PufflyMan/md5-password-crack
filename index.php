@@ -3,7 +3,6 @@
 <pre>
     <?php 
         $goodtext = "Not found";
-        echo("Hi");
 
         if (isset($_GET['md5'])) {
             $time_pre = microtime(true);
@@ -15,7 +14,7 @@
             for($i=0; $i<strlen($num); $i++ ) {
                 $ch1 = $num[$i];
                 
-                for($j=0; $j<strlen($num); $i++ ) {
+                for($j=0; $j<strlen($num); $j++ ) {
                     $ch2 = $num[$j];
 
                     for ($k=0; $k < strlen($num); $k++ ) {
@@ -23,25 +22,27 @@
 
                         for ($r=0; $r < strlen($num); $r++) {
                             $ch4 = $num[$r];
+
+                            
+                            $try1 = $ch1.$ch2;
+                            $try2 = $ch3.$ch4;
+                            $try = $try1.$try2;
+
+                            $check = hash('md5', $try);
+
+                            if ($check == $md5) {
+                                $goodtext = $try;
+                                break;
+                            }
+
+                            if ($show > 0) {
+                                print "$check $try \n";
+                                $show = $show - 1;
+                            }
                         }
                     }
                 }
 
-                $try1 = $ch1.$ch2;
-                $$try2 = $$ch3.$ch4;
-                $try = $try1.$try2;
-
-                $check = hash('md5', $try);
-
-                if ($check == $md5) {
-                    $goodtext = $try;
-                    break;
-                }
-
-                if ($show > 0) {
-                    print "$check $try \n";
-                    $show = $show - 1;
-                }
             }
 
             $time_post = microtime(true);
