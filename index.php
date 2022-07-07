@@ -9,7 +9,7 @@
             $time_pre = microtime(true);
             $md5 = $_GET['md5'];
 
-            $num = "01234";
+            $num = "0123456789";
             $show = 15;
 
             for($i=0; $i<strlen($num); $i++ ) {
