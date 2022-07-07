@@ -3,6 +3,7 @@
 <pre>
     Debug Output:
     <?php 
+    //I don't know why but there's a gap in the start of the line. I got crazy cause of that and still couldn't find it lol
         $goodtext = "Not found";
 
         if (isset($_GET['md5'])) {
